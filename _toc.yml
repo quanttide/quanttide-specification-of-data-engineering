@@ -1,0 +1,31 @@
+format: jb-book
+root: index.md
+chapters:
+  - file: entities/README.md
+    sections:
+      - file: entities/datasets/README.md
+        sections:
+          - file: entities/datasets/datasets.md
+          - file: entities/datasets/schemas.md
+          - file: entities/datasets/records.md
+      - file: entities/applications/README.md
+      - file: entities/metadata.md
+  - file: handlers/README.md
+    sections:
+      - file: handlers/general/README.md
+        sections:
+          - file: handlers/general/handlers.md
+      - file: handlers/collectors/README.md
+        sections:
+          - file:  handlers/collectors/crawlers.md
+      - file: handlers/processors/README.md
+        sections:
+          - file: handlers/processors/processors.md
+      - file: handlers/analytics.md
+      - file: handlers/visualization.md
+  - file: dispatchers/README.md
+    sections:
+      - file: dispatchers/workflows.md
+      - file: dispatchers/end-to-end.md
+  - file: dataops/README.md
+  - file: security/README.md
