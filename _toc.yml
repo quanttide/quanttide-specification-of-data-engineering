@@ -1,0 +1,13 @@
+format: jb-book
+root: README.md
+chapters:
+  - file: ubiquitous_language/README.md
+    sections:
+      - file: ubiquitous_language/collection.md
+      - file: ubiquitous_language/processing.md
+      - file: ubiquitous_language/analytics.md
+      - file: ubiquitous_language/visualization.md
+  - file: domain_models/README.md
+    sections:
+      - file: domain_models/crawlers.md
+      - file: domain_models/processors.md
