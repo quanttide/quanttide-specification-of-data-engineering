@@ -1,5 +1,5 @@
 format: jb-book
-root: README.md
+root: index.md
 chapters:
   - file: ubiquitous_language/README.md
     sections:
