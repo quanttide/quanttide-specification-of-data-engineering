@@ -1,13 +1,22 @@
 format: jb-book
 root: index.md
 chapters:
-  - file: ubiquitous_language/README.md
+  - file: datasets/README.md
+  - file: handling/README.md
     sections:
-      - file: ubiquitous_language/collection.md
-      - file: ubiquitous_language/processing.md
-      - file: ubiquitous_language/analytics.md
-      - file: ubiquitous_language/visualization.md
-  - file: domain_models/README.md
+      - file: handling/general/README.md
+        sections:
+          - file: handling/general/handlers.md
+      - file: handling/collection/README.md
+        sections:
+          - file:  handling/collection/crawlers.md
+      - file: handling/processing/README.md
+        sections:
+          - file: handling/processing/processors.md
+      - file: handling/analytics.md
+      - file: handling/visualization.md
+  - file: orchestration/README.md
     sections:
-      - file: domain_models/crawlers.md
-      - file: domain_models/processors.md
+      - file: orchestration/workflows.md
+      - file: orchestration/end-to-end.md
+
