@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>流程编排 &#8212; 量潮数据工程标准</title>
+    <title>数据可视化 &#8212; 量潮数据工程标准</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'orchestration/README';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'handlers/visualization';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="数据工作流" href="workflows.html" />
-    <link rel="prev" title="数据可视化" href="../handling/visualization.html" />
+    <link rel="next" title="流程编排" href="../dispatchers/README.html" />
+    <link rel="prev" title="数据分析" href="analytics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -151,32 +151,32 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../datasets/README.html">数据集管理</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../datasets/datasets.html">数据集</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasets/schemas.html">数据模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../datasets/records.html">数据记录</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../entities/README.html">数据实体</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../entities/datasets.html">数据集</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../entities/schemas.html">数据模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../entities/records.html">数据记录</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../handling/README.html">数据处理</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../handling/general/README.html">一般原理</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../handling/general/handlers.html">处理器</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">数据处理</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="general/README.html">一般原理</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="general/handlers.html">处理器</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../handling/collection/README.html">数据采集</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../handling/collection/crawlers.html">网页爬虫</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="collection/README.html">数据采集</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="collection/crawlers.html">网页爬虫</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../handling/processing/README.html">数据预处理</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../handling/processing/processors.html">预处理器</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="processing/README.html">数据预处理</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="processing/processors.html">预处理器</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../handling/analytics.html">数据分析</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../handling/visualization.html">数据可视化</a></li>
+<li class="toctree-l2"><a class="reference internal" href="analytics.html">数据分析</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">数据可视化</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">流程编排</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="workflows.html">数据工作流</a></li>
-<li class="toctree-l2"><a class="reference internal" href="end-to-end.html">端到端</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../dispatchers/README.html">流程编排</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../dispatchers/workflows.html">数据处理工作流</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dispatchers/end-to-end.html">端到端</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../dataops/README.html">DataOps</a></li>
@@ -238,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/orchestration/README.md" target="_blank"
+      <li><a href="../_sources/handlers/visualization.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -318,7 +318,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>流程编排</h1>
+    <h1>数据可视化</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,9 +333,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>流程编排<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+<h1>数据可视化<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>数据可视化是将数据通过视觉元素，如图表、图形和地图等方式，以直观的方式呈现出来的过程。数据可视化的目的是帮助人们更好地理解数据、识别趋势和模式、发现异常，并从中获取洞察力，以便做出更好的决策。</p>
+<p>数据可视化可以用于各种不同的数据类型，例如数字数据、文本数据、地理位置数据等。它可以采用静态或交互方式展示，从而使观察者能够与数据进行更深入的交互和探索，并尝试不同的分析方法和解释。</p>
+<p>数据可视化通常使用的图表种类包括线图、柱形图、饼图、散点图、热力图等。而数据可视化通过选择恰当的图表类型和视觉设计元素，可以更有效地表现数据的含义和趋势。</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -351,7 +352,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./orchestration"
+            path: "./handlers"
         },
         predefinedOutput: true
     }
@@ -370,20 +371,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../handling/visualization.html"
+       href="analytics.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">数据可视化</p>
+        <p class="prev-next-title">数据分析</p>
       </div>
     </a>
     <a class="right-next"
-       href="workflows.html"
+       href="../dispatchers/README.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">数据工作流</p>
+        <p class="prev-next-title">流程编排</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
