@@ -10,6 +10,12 @@
 ## 模型
 
 - 基本模型`DataEntity`
+
+数据集：
 - 数据集`DataSet`：类似一个SQL Database。
 - 数据模型`DataSchema`：类似一个SQL Schema，由一个或者多个SQL表存储的、表达一类数据的。
 - 数据记录`DataRecord`：类似一个SQL Row，由一个或者多个SQL表存储的、。
+
+数据应用：
+- 数据应用`DataApplication`
+- 数据视图`DataView`
