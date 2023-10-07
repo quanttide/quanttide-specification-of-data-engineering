@@ -1,15 +1,15 @@
 format: jb-book
 root: index.md
 chapters:
-  - file: entities/README.md
+  - file: deliveries/README.md
     sections:
-      - file: entities/datasets/README.md
+      - file: deliveries/datasets/README.md
         sections:
-          - file: entities/datasets/datasets.md
-          - file: entities/datasets/schemas.md
-          - file: entities/datasets/records.md
-      - file: entities/applications/README.md
-      - file: entities/metadata.md
+          - file: deliveries/datasets/datasets.md
+          - file: deliveries/datasets/schemas.md
+          - file: deliveries/datasets/records.md
+      - file: deliveries/applications/README.md
+      - file: deliveries/metadata.md
   - file: handlers/README.md
     sections:
       - file: handlers/general/README.md
@@ -23,9 +23,9 @@ chapters:
           - file: handlers/processors/processors.md
       - file: handlers/analytics.md
       - file: handlers/visualization.md
-  - file: dispatchers/README.md
+  - file: orchestrators/README.md
     sections:
-      - file: dispatchers/workflows.md
-      - file: dispatchers/end-to-end.md
+      - file: orchestrators/workflows.md
+      - file: orchestrators/end-to-end.md
   - file: dataops/README.md
   - file: security/README.md
