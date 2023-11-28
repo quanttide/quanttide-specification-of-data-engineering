@@ -4,28 +4,11 @@ chapters:
   - file: deliveries/README.md
     sections:
       - file: deliveries/datasets/README.md
-        sections:
-          - file: deliveries/datasets/datasets.md
-          - file: deliveries/datasets/schemas.md
-          - file: deliveries/datasets/records.md
-      - file: deliveries/applications/README.md
-      - file: deliveries/metadata.md
   - file: handlers/README.md
-    sections:
-      - file: handlers/general/README.md
-        sections:
-          - file: handlers/general/handlers.md
+    sections: 
       - file: handlers/collectors/README.md
-        sections:
-          - file:  handlers/collectors/crawlers.md
-      - file: handlers/processors/README.md
-        sections:
-          - file: handlers/processors/processors.md
-      - file: handlers/analytics.md
-      - file: handlers/visualization.md
+        sections: 
+          - file: handlers/collectors/crawlers.md
+      - file: handlers/processors.md
   - file: orchestrators/README.md
-    sections:
-      - file: orchestrators/workflows.md
-      - file: orchestrators/end-to-end.md
-  - file: dataops/README.md
-  - file: security/README.md
+  
