@@ -3,12 +3,16 @@ root: index.md
 chapters:
   - file: deliveries/README.md
     sections:
-      - file: deliveries/datasets/README.md
+      - file: deliveries/dataset.md
   - file: handlers/README.md
     sections: 
       - file: handlers/collectors/README.md
         sections: 
-          - file: handlers/collectors/crawlers.md
-      - file: handlers/processors.md
+          - file: handlers/collectors/crawler.md
+      - file: handlers/processors/README.md
   - file: orchestrators/README.md
-  
+    sections:
+      - file: orchestrators/task.md
+      - file: orchestrators/scheduler.md
+      - file: orchestrators/dispatcher.md
+      - file: orchestrators/orchestrator.md       
