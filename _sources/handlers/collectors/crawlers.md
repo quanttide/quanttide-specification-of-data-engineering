@@ -1,6 +1,4 @@
-# 网页爬虫
-
-## 爬虫单元
+# 爬虫采集器
 
 ```python
 class Cralwer:
