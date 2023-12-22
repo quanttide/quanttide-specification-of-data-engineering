@@ -3,7 +3,11 @@ root: index.md
 chapters:
   - file: deliveries/README.md
     sections:
-      - file: deliveries/dataset.md
+      - file: deliveries/datasets/README.md
+        sections: 
+          - file: deliveries/datasets/dataset.md
+          - file: deliveries/datasets/schema.md
+          - file: deliveries/datasets/record.md
   - file: handlers/README.md
     sections: 
       - file: handlers/collectors/README.md
