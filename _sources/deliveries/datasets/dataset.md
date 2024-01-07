@@ -7,4 +7,4 @@
 - **id (String):** 数据集的唯一标识符。
 - **name (String):** 数据集的名称。
 - **verboseName (String?):** 数据集的详细名称。
-- **description (String?):** 数据集的描述信息。
+- **readme (String?):** 数据集的描述信息。
