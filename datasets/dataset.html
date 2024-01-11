@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>数据交付物 &#8212; 量潮数据工程标准</title>
+    <title>数据集DataSet &#8212; 量潮数据工程标准</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'deliveries/README';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datasets/dataset';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="数据集" href="datasets/README.html" />
-    <link rel="prev" title="简介" href="../index.html" />
+    <link rel="next" title="数据模型DataSchema" href="schema.html" />
+    <link rel="prev" title="数据集" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,25 +170,29 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">数据交付物</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="datasets/README.html">数据集</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="datasets/dataset.html">数据集<code class="docutils literal notranslate"><span class="pre">DataSet</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="datasets/schema.html">数据模型<code class="docutils literal notranslate"><span class="pre">DataSchema</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="datasets/record.html">数据记录<code class="docutils literal notranslate"><span class="pre">Record</span></code></a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">数据交付物</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">数据集</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">数据集<code class="docutils literal notranslate"><span class="pre">DataSet</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="schema.html">数据模型<code class="docutils literal notranslate"><span class="pre">DataSchema</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="record.html">数据记录<code class="docutils literal notranslate"><span class="pre">Record</span></code></a></li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../handlers/README.html">数据处理器</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../handlers/collectors/README.html">数据采集器</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">数据生命周期</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../handlers/README.html">数据处理器</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../handlers/collectors/README.html">采集器</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../handlers/collectors/crawler.html">爬虫采集器</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../handlers/processors/README.html">预处理器</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../orchestrators/README.html">数据编排器</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">系统治理</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../orchestrators/README.html">数据编排器</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../orchestrators/task.html">数据任务<code class="docutils literal notranslate"><span class="pre">DataTask</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../orchestrators/scheduler.html">数据调度器<code class="docutils literal notranslate"><span class="pre">DataScheduler</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="../orchestrators/dispatcher.html">数据分发器<code class="docutils literal notranslate"><span class="pre">DataDispatcher</span></code></a></li>
@@ -249,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/deliveries/README.md" target="_blank"
+      <li><a href="../_sources/datasets/dataset.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -331,7 +335,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>数据交付物</h1>
+    <h1>数据集DataSet</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -345,10 +349,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>数据交付物<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="dataset">
+<h1>数据集<code class="docutils literal notranslate"><span class="pre">DataSet</span></code><a class="headerlink" href="#dataset" title="Permalink to this heading">#</a></h1>
+<p>数据集领域模型的设计旨在提供一个简单而灵活的模型，以表示数据集的基本信息。</p>
+<p>字段定义为：</p>
+<ul class="simple">
+<li><p><strong>id (String):</strong> 数据集的唯一标识符。</p></li>
+<li><p><strong>name (String):</strong> 数据集的名称。</p></li>
+<li><p><strong>verboseName (String?):</strong> 数据集的详细名称。</p></li>
+<li><p><strong>readme (String?):</strong> 数据集的描述信息。</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -364,7 +374,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./deliveries"
+            path: "./datasets"
         },
         predefinedOutput: true
     }
@@ -382,20 +392,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../index.html"
+       href="README.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">简介</p>
+        <p class="prev-next-title">数据集</p>
       </div>
     </a>
     <a class="right-next"
-       href="datasets/README.html"
+       href="schema.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">数据集</p>
+        <p class="prev-next-title">数据模型<code class="docutils literal notranslate"><span class="pre">DataSchema</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
