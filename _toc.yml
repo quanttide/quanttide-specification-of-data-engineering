@@ -1,22 +1,26 @@
 format: jb-book
 root: index.md
-chapters:
-  - file: deliveries/README.md
-    sections:
-      - file: deliveries/datasets/README.md
+parts:
+  - caption: 数据交付物
+    chapters:
+      - file: datasets/README.md
         sections: 
-          - file: deliveries/datasets/dataset.md
-          - file: deliveries/datasets/schema.md
-          - file: deliveries/datasets/record.md
-  - file: handlers/README.md
-    sections: 
-      - file: handlers/collectors/README.md
+          - file: datasets/dataset.md
+          - file: datasets/schema.md
+          - file: datasets/record.md
+  - caption: 数据生命周期
+    chapters:
+      - file: handlers/README.md
         sections: 
-          - file: handlers/collectors/crawler.md
-      - file: handlers/processors/README.md
-  - file: orchestrators/README.md
-    sections:
-      - file: orchestrators/task.md
-      - file: orchestrators/scheduler.md
-      - file: orchestrators/dispatcher.md
-      - file: orchestrators/orchestrator.md       
+          - file: handlers/collectors/README.md
+            sections: 
+              - file: handlers/collectors/crawler.md
+          - file: handlers/processors/README.md
+  - caption: 系统治理
+    chapters: 
+      - file: orchestrators/README.md
+        sections:
+          - file: orchestrators/task.md
+          - file: orchestrators/scheduler.md
+          - file: orchestrators/dispatcher.md
+          - file: orchestrators/orchestrator.md       
