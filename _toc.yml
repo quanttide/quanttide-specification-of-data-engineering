@@ -30,8 +30,6 @@ parts:
   - caption: 数据引擎
     chapters:
       - file: engines/README.md
-        sections:
-          - file: engines/dataengine.md
   - caption: 数据后端
     chapters:
       - file: backends/README.md
@@ -54,5 +52,4 @@ parts:
         sections:
           - file: guides/naming-conventions.md
           - file: guides/document-structure.md
-          - file: guides/etl.md
           - file: guides/flutter-data-viz.md       
