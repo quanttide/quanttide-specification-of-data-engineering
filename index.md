@@ -18,7 +18,12 @@
 - 工厂 Factory
 - 流水线 Pipeline
 - 任务 Task
+<<<<<<< Updated upstream
 
+=======
+- 清单 Manifest
+- 报告 Report
+>>>>>>> Stashed changes
 交付区 Delivery Zone
 - 仓库 Registry
 - 数据集 Dataset
