@@ -19,12 +19,12 @@
 
 ### 命名规范
 
-所有目录和配置字段遵循 **Unix 风格命名**：
+所有目录和配置字段遵循 Unix 风格命名：
 
-- **单数** — 目录名用单数，表示"这一类对象的定义"。好：`pipeline/`，不好：`pipelines/`
-- **小写** — 全小写字母。好：`blueprint/`，不好：`BluePrint/`
-- **连字符** — 单词间用连字符分隔。好：`contract/`，不好：`contracts/`
-- **无缩写** — 除非是通用缩写，否则不缩写。好：`catalog/`，不好：`catlg/`
+- 单数 — 目录名用单数，表示"这一类对象的定义"。好：`pipeline/`，不好：`pipelines/`
+- 小写 — 全小写字母。好：`blueprint/`，不好：`BluePrint/`
+- 连字符 — 单词间用连字符分隔。好：`contract/`，不好：`contracts/`
+- 无缩写 — 除非是通用缩写，否则不缩写。好：`catalog/`，不好：`catlg/`
 
 CUE / YAML 文件的字段名也遵循此规范：
 
@@ -48,7 +48,7 @@ steps:
 
 ### 环境变量
 
-- **`PIPELINE_DIR`** — 默认 `.quanttide/data/pipeline`，数据管道目录
-- **`BLUEPRINT_DIR`** — 默认 `.quanttide/data/blueprint`，数据蓝图目录
-- **`CONTRACT_DIR`** — 默认 `.quanttide/data/contract`，数据契约目录
-- **`CATALOG_DIR`** — 默认 `.quanttide/data/catalog`，数据目录（registry.json）
+- `PIPELINE_DIR` — 默认 `.quanttide/data/pipeline`，数据管道目录
+- `BLUEPRINT_DIR` — 默认 `.quanttide/data/blueprint`，数据蓝图目录
+- `CONTRACT_DIR` — 默认 `.quanttide/data/contract`，数据契约目录
+- `CATALOG_DIR` — 默认 `.quanttide/data/catalog`，数据目录（registry.json）
