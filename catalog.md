@@ -26,12 +26,10 @@ catalog 记录已接收、处理中、已交付的文件（Volume）。它是运
 
 ## 字段
 
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `name` | string | volume 名称 |
-| `path` | string | 文件绝对路径 |
-| `size` | number | 文件大小（字节） |
-| `received_at` | string | 注册时间 |
-| `status` | string | 状态：received / processing / processed / delivered |
-| `provider` | string (可选) | 来源 provider |
-| `source` | string (可选) | 来源 URL |
+- **`name`** (string) — volume 名称
+- **`path`** (string) — 文件绝对路径
+- **`size`** (number) — 文件大小（字节）
+- **`received_at`** (string) — 注册时间
+- **`status`** (string) — 状态：received / processing / processed / delivered
+- **`provider`** (string, 可选) — 来源 provider
+- **`source`** (string, 可选) — 来源 URL

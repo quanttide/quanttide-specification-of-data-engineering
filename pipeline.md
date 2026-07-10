@@ -29,7 +29,5 @@ csvStandard: #Pipeline & {
 
 ## 字段
 
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `name` | string | pipeline 名称，用于引用 |
-| `steps` | list | 处理步骤列表，每步指定可执行命令 |
+- **`name`** (string) — pipeline 名称，用于引用
+- **`steps`** (list) — 处理步骤列表，每步指定可执行命令

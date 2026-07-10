@@ -27,8 +27,6 @@ csvStandardization: #Blueprint & {
 
 ## 字段
 
-| 字段 | 类型 | 说明 |
-|---|---|---|
-| `name` | string | blueprint 名称 |
-| `pipeline` | string | 引用的 pipeline 名称 |
-| `contract` | string | 引用的 contract 名称 |
+- **`name`** (string) — blueprint 名称
+- **`pipeline`** (string) — 引用的 pipeline 名称
+- **`contract`** (string) — 引用的 contract 名称
