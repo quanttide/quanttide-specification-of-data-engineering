@@ -50,7 +50,6 @@ steps:
 - **`BLUEPRINT_DIR`** — 默认 `.quanttide/data/blueprint`，蓝图定义目录
 - **`CONTRACT_DIR`** — 默认 `.quanttide/data/contract`，契约定义目录
 - **`CATALOG_DIR`** — 默认 `.quanttide/data/catalog`，数据目录（registry.json）
-- **`WORKDIR`** — 默认系统临时目录，运行时工作目录
 
 ## 各目录详述
 
