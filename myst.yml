@@ -1,0 +1,15 @@
+version: 1
+project:
+  title: 量潮数据工程标准
+  description: 量潮数据工程标准规范
+  keywords: [quanttide, data-engineering, specification]
+  subject: 工程标准
+  open_access: true
+  license:
+    content: MIT
+  toc:
+    - file: index.md
+    - file: pipeline.md
+    - file: blueprint.md
+    - file: contract.md
+    - file: catalog.md
