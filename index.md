@@ -9,13 +9,13 @@
 ```
 .quanttide/
 └── data/
-    ├── pipeline/       # 管道定义（CUE 文件）
-    ├── blueprint/      # 蓝图定义（CUE 文件）
+    ├── pipeline/       # 数据管道（CUE 文件）
+    ├── blueprint/      # 数据蓝图（CUE 文件）
     ├── contract/       # 契约定义（CUE / YAML / JSON 文件）
-    └── catalog/        # 数据目录（registry.json）
+    └── catalog/        # 数据契约（registry.json）
 ```
 
-各目录的详细定义见：[pipeline](pipeline.md)、[blueprint](blueprint.md)、[contract](contract.md)、[catalog](catalog.md)。
+各目录的详细定义见：[数据管道](pipeline.md)、[数据蓝图](blueprint.md)、[契约](contract.md)、[数据契约](catalog.md)。
 
 ### 命名规范
 
@@ -48,7 +48,7 @@ steps:
 
 ### 环境变量
 
-- **`PIPELINE_DIR`** — 默认 `.quanttide/data/pipeline`，管道定义目录
-- **`BLUEPRINT_DIR`** — 默认 `.quanttide/data/blueprint`，蓝图定义目录
+- **`PIPELINE_DIR`** — 默认 `.quanttide/data/pipeline`，数据管道目录
+- **`BLUEPRINT_DIR`** — 默认 `.quanttide/data/blueprint`，数据蓝图目录
 - **`CONTRACT_DIR`** — 默认 `.quanttide/data/contract`，契约定义目录
-- **`CATALOG_DIR`** — 默认 `.quanttide/data/catalog`，数据目录（registry.json）
+- **`CATALOG_DIR`** — 默认 `.quanttide/data/catalog`，数据契约目录（registry.json）
