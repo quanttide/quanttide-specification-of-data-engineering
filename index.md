@@ -15,6 +15,8 @@
     └── catalog/        # 数据目录（registry.json）
 ```
 
+各目录的详细定义见：[pipeline](pipeline.md)、[blueprint](blueprint.md)、[contract](contract.md)、[catalog](catalog.md)。
+
 ### 命名规范
 
 所有目录和配置字段遵循 **Unix 风格命名**：
@@ -50,61 +52,3 @@ steps:
 - **`BLUEPRINT_DIR`** — 默认 `.quanttide/data/blueprint`，蓝图定义目录
 - **`CONTRACT_DIR`** — 默认 `.quanttide/data/contract`，契约定义目录
 - **`CATALOG_DIR`** — 默认 `.quanttide/data/catalog`，数据目录（registry.json）
-
-## 各目录详述
-
-### pipeline/
-
-存放管道定义文件，格式为 CUE。
-
-文件结构示例：
-
-```cue
-// .quanttide/data/pipeline/default.cue
-package pipeline
-
-csvStandard: #Pipeline & {
-    name: "csv-standard"
-    steps: [
-        {command: "python3 processors/validate.py"},
-        {command: "python3 processors/transform.py"},
-    ]
-}
-```
-
-### blueprint/
-
-存放蓝图定义文件，格式为 CUE。蓝图组合 contract 和 pipeline 形成完整处理方案。
-
-```cue
-// .quanttide/data/blueprint/default.cue
-package blueprint
-
-csvStandardization: #Blueprint & {
-    name: "csv-standardization"
-    pipeline: "csv-standard"
-    contract: "csv-standard"
-}
-```
-
-### contract/
-
-存放契约定义文件，支持 CUE / YAML / JSON 格式。契约定义数据的输入输出结构约束，不关心物理存储位置。
-
-### catalog/
-
-数据目录，记录已接收/处理/交付的文件（Volume），存储为 `registry.json`。
-
-```json
-{
-  "cust-001-raw": {
-    "name": "cust-001-raw",
-    "path": "/tmp/qtcloud-data/cust-001/raw.csv",
-    "size": 2340000,
-    "received_at": "2026-07-10 12:00:00",
-    "status": "received",
-    "provider": "dropbox",
-    "source": "https://www.dropbox.com/s/xxx/file.csv"
-  }
-}
-```
