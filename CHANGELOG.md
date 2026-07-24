@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## [0.1.0-rc.1] - 2026-07-24
+
+### Changed
+
+- 全部组件文档升级为正式规范格式（RFC 2119 关键词：MUST/SHOULD/MAY）
+- `index.md`：新增引言、文档约定、版本兼容性章节。CUE 示例替换为 YAML
+- `requirement.md`：增加正式字段定义表、验证规则、标准模板和完整示例
+- `contract.md`：增加正式类型系统（7种类型 + enum 约束）、字段级约束/承诺定义、验证规则和完整 YAML 示例。CUE 替换为 YAML
+- `blueprint.md`：增加正式字段定义表、step 级 description/expectation 规范、验证规则和完整 YAML 示例。CUE 替换为 YAML
+- `pipeline.md`：增加 runtime 子结构定义、step 级 image/env 扩展、调度方式枚举、验证规则和完整 YAML 示例。CUE 替换为 YAML
+
+### Migration from v0.1.0
+
+- CUE 格式已弃用，统一使用 YAML
+- 所有文档增加了 RFC 2119 关键词，字段约束从"描述"升级为"MUST/SHOULD/MAY"
+
 ## [0.1.0] - 2026-07-23
 
 ### Changed

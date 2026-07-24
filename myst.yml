@@ -12,5 +12,5 @@ project:
     - file: requirement.md
     - file: contract.md
     - file: blueprint.md
-    - file: catalog.md
     - file: pipeline.md
+    - file: catalog.md
