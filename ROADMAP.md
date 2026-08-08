@@ -2,7 +2,7 @@
 
 > 格式：Keep a Changelog + checkbox 任务清单。
 > ROADMAP 面向未来计划；发布后将已完成条目迁移到 CHANGELOG。
-> 当前：spec/v0.0.1（CHANGELOG 已记录 v0.1.0 与 v0.1.0-rc.1，未打 tag）；目标 v0.1.0：正式规范发布。
+> 当前：spec/v0.0.2（四层框架重构 + RFC 2119 规范升级已发布）；目标 v0.1.0：正式规范发布。
 
 ## [0.1.0]
 
@@ -10,8 +10,8 @@
 
 ### Added
 
-- [x] 四层框架重构：`requirement.md`（DRD 规范）新增，`blueprint.md`/`contract.md`/`pipeline.md` 重定义（见 `CHANGELOG.md` v0.1.0）
-- [x] 正式规范格式升级：全部组件文档 RFC 2119 关键词（MUST/SHOULD/MAY），CUE 示例替换为 YAML（见 `CHANGELOG.md` v0.1.0-rc.1）
+- [x] 四层框架重构：`requirement.md`（DRD 规范）新增，`blueprint.md`/`contract.md`/`pipeline.md` 重定义（已随 v0.0.2 发布，见 `CHANGELOG.md`）
+- [x] 正式规范格式升级：全部组件文档 RFC 2119 关键词（MUST/SHOULD/MAY），CUE 示例替换为 YAML（已随 v0.0.2 发布，见 `CHANGELOG.md`）
 
 ### Changed
 
