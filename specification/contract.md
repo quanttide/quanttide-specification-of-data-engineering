@@ -77,7 +77,7 @@ Contract 文件 MUST 存放在 `.quanttide/data/specification/contract/` 目录�
 2. `input` 中每个字段的 `type` MUST 在 3.3 节的合法值列表中
 3. `output` 中每个字段的 `type` MUST 在 3.3 节的合法值列表中
 4. `type` 为 `enum` 的字段 MUST 附带 `values` 子字段，`values` MUST 为非空列表
-5. 字段名 MUST 遵循 [index.md](index.md) 2.2 节的 Unix 命名规范
+5. 字段名 MUST 遵循 [index.md](../index.md) 2.2 节的 Unix 命名规范
 
 ---
 

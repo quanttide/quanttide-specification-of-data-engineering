@@ -6,7 +6,7 @@
 
 - **Breaking**: 四层框架重构——需求层(Requirement) → 规格层(Specification) → 实现层(Implementation) → 任务层(Task)
 - 新增 `requirement.md`：数据需求文档（DRD）规范定义
-- 重定义 `blueprint.md`：从"完整处理方案"改为规格层的"处理蓝图"（工作流步骤），与 Contract 并列
+- 重定义 `blueprint.md`：从"完整处理方案"改为规格层的"数据蓝图"（工作流步骤），与 Contract 并列
 - 重定义 `contract.md`：明确为 Specification 组成部分，增加输入/输出契约区分
 - 重定义 `pipeline.md`：从规格层移至实现层，增加运行时配置和容器化字段
 - 更新 `index.md`：四层框架总览 + 术语表 + 新目录结构
@@ -22,7 +22,7 @@
 旧目录结构 → 新目录结构:
 - `blueprint/`（旧 Blueprint 定义）→ `specification/`（规格书，含 contract + blueprint）
 - `contract/` → `specification/contract/`
-- `pipeline/`（旧处理步骤）→ `specification/blueprint/`（处理蓝图）
+- `pipeline/`（旧处理步骤）→ `specification/blueprint/`（数据蓝图）
 - 新增 `.quanttide/data/pipeline/` 为实现层数据管道
 
 ### Removed

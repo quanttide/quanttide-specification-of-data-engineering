@@ -76,7 +76,7 @@ Context → clarify → Requirements (DRD)
 ├── requirement/         # 数据需求文档（Markdown）
 ├── specification/       # 数据规格书
 │   ├── contract/        #   数据契约（YAML）
-│   └── blueprint/       #   处理蓝图（YAML）
+│   └── blueprint/       #   数据蓝图（YAML）
 ├── catalog/             # 数据目录（registry.json）
 └── pipeline/            # 数据管道（YAML + 可执行代码）
 ```
@@ -132,7 +132,7 @@ Steps:
 | 数据需求文档 | DRD (Data Requirements Document) | Requirement | 面向客户的业务需求描述。使用自然语言，回答"要交付什么"。通过 `clarify` 动作从客户上下文生成。 |
 | 数据规格书 | Specification | Specification | Contract 和 Blueprint 的统称。面向技术的设计文档集合。通过 `design` 动作从 DRD 生成。 |
 | 数据契约 | Contract | Specification | 数据输入/输出结构的正式定义。描述每个字段的类型、约束和业务含义。 |
-| 处理蓝图 | Blueprint | Specification | 数据处理工作流的有序步骤定义。描述从输入到输出的转换路径。 |
+| 数据蓝图 | Blueprint | Specification | 数据处理工作流的有序步骤定义。描述从输入到输出的转换路径。 |
 | 数据目录 | Catalog | Implementation | 运行时文件注册表。记录 Volume 的接收状态、处理进度和交付信息。 |
 | 数据管道 | Pipeline | Implementation | 可执行的数据处理流程定义。将 Blueprint 步骤映射为具体运行时配置和命令。 |
 
@@ -142,11 +142,11 @@ Steps:
 
 | 组件 | 规范文档 | 层次 |
 |------|---------|------|
-| DRD | [requirement.md](requirement.md) | Requirement |
-| Contract | [contract.md](contract.md) | Specification |
-| Blueprint | [blueprint.md](blueprint.md) | Specification |
-| Catalog | [catalog.md](catalog.md) | Implementation |
-| Pipeline | [pipeline.md](pipeline.md) | Implementation |
+| DRD | [requirement/index.md](requirement/index.md) | Requirement |
+| Contract | [specification/contract.md](specification/contract.md) | Specification |
+| Blueprint | [specification/blueprint.md](specification/blueprint.md) | Specification |
+| Catalog | [implementation/catalog.md](implementation/catalog.md) | Implementation |
+| Pipeline | [implementation/pipeline.md](implementation/pipeline.md) | Implementation |
 
 ---
 

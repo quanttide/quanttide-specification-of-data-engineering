@@ -10,14 +10,14 @@
 
 ### Added
 
-- [x] 四层框架重构：`requirement.md`（DRD 规范）新增，`blueprint.md`/`contract.md`/`pipeline.md` 重定义（已随 v0.0.2 发布，见 `CHANGELOG.md`）
+- [x] 四层框架重构：`requirement/index.md`（DRD 规范）新增，`specification/blueprint.md`/`specification/contract.md`/`implementation/pipeline.md` 重定义（已随 v0.0.2 发布，见 `CHANGELOG.md`）
 - [x] 正式规范格式升级：全部组件文档 RFC 2119 关键词（MUST/SHOULD/MAY），CUE 示例替换为 YAML（已随 v0.0.2 发布，见 `CHANGELOG.md`）
 
 ### Changed
 
 - [ ] 发布 v0.1.0 正式版：更新 `index.md` 版本号，创建 tag 与 GitHub Release
 - [ ] 各消费者对齐 v0.1.0：CLI/Provider/Studio 按新目录结构与 YAML 格式调整（见 `data/context/engineering-standards.md` 版本对应关系）
-- [ ] 案例库对齐：`docs/gallery` 案例的 `specification.yaml` 与 `contract.md`/`blueprint.md` 字段定义核对
+- [ ] 案例库对齐：`docs/gallery` 案例的 `specification.yaml` 与 `specification/contract.md`/`specification/blueprint.md` 字段定义核对
 
 ### Fixed
 

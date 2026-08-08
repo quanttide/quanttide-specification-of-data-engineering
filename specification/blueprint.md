@@ -1,4 +1,4 @@
-# Blueprint — 处理蓝图
+# Blueprint — 数据蓝图
 
 > 层次：Specification | 动词：design | 受众：工程师 | 格式：YAML
 
@@ -6,7 +6,7 @@
 
 ## 1. 定义
 
-处理蓝图（Blueprint）是数据处理工作流的有序步骤定义。它描述"怎么处理"——数据从输入格式转换到输出格式需要经过哪些处理环节。
+数据蓝图（Blueprint）是数据处理工作流的有序步骤定义。它描述"怎么处理"——数据从输入格式转换到输出格式需要经过哪些处理环节。
 
 Blueprint 是 Specification 的组成部分，与 Contract 并列。一个 Blueprint MUST 关联一个 Contract：
 - Contract 定义此蓝图处理的**数据结构**

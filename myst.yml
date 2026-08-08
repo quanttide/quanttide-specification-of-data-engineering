@@ -9,8 +9,8 @@ project:
     content: CC-BY-4.0
   toc:
     - file: index.md
-    - file: requirement.md
-    - file: contract.md
-    - file: blueprint.md
-    - file: pipeline.md
-    - file: catalog.md
+    - file: requirement/index.md
+    - file: specification/contract.md
+    - file: specification/blueprint.md
+    - file: implementation/pipeline.md
+    - file: implementation/catalog.md
