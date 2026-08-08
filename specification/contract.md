@@ -8,7 +8,7 @@
 
 数据契约（Contract）是数据输入/输出结构的正式定义。它描述数据"长什么样"——字段名、数据类型、约束条件和质量承诺。
 
-Contract 是 Specification 的组成部分，与 Blueprint 并列。Contract 定义结构约束，Blueprint 定义处理流程。两者共同构成完整的 Specification。
+Contract 是 Specification 的组成部分，与 [Blueprint](blueprint.md) 并列。Contract 定义结构约束，Blueprint 定义处理流程。两者共同构成完整的 Specification。
 
 Contract MUST 区分两种方向：
 
@@ -77,7 +77,7 @@ Contract 文件 MUST 存放在 `.quanttide/data/specification/contract/` 目录�
 2. `input` 中每个字段的 `type` MUST 在 3.3 节的合法值列表中
 3. `output` 中每个字段的 `type` MUST 在 3.3 节的合法值列表中
 4. `type` 为 `enum` 的字段 MUST 附带 `values` 子字段，`values` MUST 为非空列表
-5. 字段名 MUST 遵循 [index.md](../index.md) 2.2 节的 Unix 命名规范
+5. 字段名 MUST 遵循 [index.md](../index.md#22-命名规范) 的 Unix 命名规范
 
 ---
 
@@ -91,14 +91,16 @@ input:
   <field-name>:
     type: <string|number|integer|boolean|date|datetime|enum>
     doc: <业务含义>
-    constraint: <约束条件>  # 可选，输入字段推荐提供
+    constraint: <约束条件>
 
 output:
   <field-name>:
     type: <string|number|integer|boolean|date|datetime|enum>
     doc: <业务含义>
-    guarantee: <质量承诺>   # 可选，输出字段推荐提供
+    guarantee: <质量承诺>
 ```
+
+完整示例见[第 6 节](#6-示例)。
 
 ---
 

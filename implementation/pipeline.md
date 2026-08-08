@@ -8,11 +8,11 @@
 
 数据管道（Pipeline）是实现层的可执行数据处理流程定义。它将 Blueprint 中定义的步骤映射为具体的运行时命令、环境配置和调度规则。
 
-Pipeline 是 Implementation 的组成部分，与 Catalog 并列：
+Pipeline 是 Implementation 的组成部分，与 [Catalog](catalog.md) 并列：
 - Pipeline 定义**怎么执行**（运行时配置 + 命令映射）
 - Catalog 记录**执行了什么**（运行时文件注册）
 
-一个 Pipeline MUST 关联一个 Blueprint。Pipeline 是 Blueprint 的运行时实现。
+一个 Pipeline MUST 关联一个 [Blueprint](../specification/blueprint.md)。Pipeline 是 Blueprint 的运行时实现。
 
 ---
 
@@ -86,15 +86,17 @@ blueprint: <关联的 Blueprint 名称>
 runtime:
   engine: <python3|node|bash|...>
   version: <版本号>
-schedule: <manual|cron|event-driven>  # 可选，默认 manual
+schedule: <manual|cron|event-driven>
 
 steps:
   - name: <对应 Blueprint step 名称>
     command: <可执行命令>
-    image: <容器镜像>               # 可选
-    env:                            # 可选
+    image: <容器镜像>
+    env:
       KEY: value
 ```
+
+完整示例见[第 6 节](#6-示例)。
 
 ---
 

@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## [0.0.3] - 2026-08-08
+
+### Changed
+
+- 文档目录按四层框架重组：`requirement/`、`specification/`、`implementation/`，更新 `myst.yml` TOC 与 `index.md` 组件索引
+- 术语统一："处理蓝图"改为"数据蓝图"（`index.md` 术语表、`blueprint.md`、`CHANGELOG.md`）
+
+### Added
+
+- `index.md`：新增文档地图（4.1 节，规范仓库目录 vs 运行时目录对应关系）
+- `index.md`：术语表补充 Task/Feature/Observation/Volume
+- `index.md`：明确"动词"概念（1.2 节）与组件名称中英文使用约定（1.3 节）
+- `catalog.md`：补全为统一组件模板（头部标注、字段表、验证规则、结构/示例）
+
+### Fixed
+
+- `AGENTS.md`：命名规范去重，改为引用 `index.md`；补充文档组织说明
+- 数字章节引用改为锚点链接；组件文档间交叉引用互链
+- 结构骨架精简，注释去除冗余，字段约束以第 3 节字段表为准
+
 ## [0.0.2] - 2026-08-08
 
 ### Changed

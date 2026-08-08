@@ -8,7 +8,7 @@
 
 数据蓝图（Blueprint）是数据处理工作流的有序步骤定义。它描述"怎么处理"——数据从输入格式转换到输出格式需要经过哪些处理环节。
 
-Blueprint 是 Specification 的组成部分，与 Contract 并列。一个 Blueprint MUST 关联一个 Contract：
+Blueprint 是 Specification 的组成部分，与 [Contract](contract.md) 并列。一个 Blueprint MUST 关联一个 Contract：
 - Contract 定义此蓝图处理的**数据结构**
 - Blueprint 定义此数据的**转换步骤**
 
@@ -77,6 +77,8 @@ steps:
     description: <业务逻辑说明>
     expectation: <预期产出>
 ```
+
+完整示例见[第 6 节](#6-示例)。
 
 ---
 

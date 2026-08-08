@@ -51,6 +51,8 @@ Context → clarify → Requirements (DRD)
     → report → transfer → Delivery
 ```
 
+**动词**是各层对外提供的人工/工具动作，也是 CLI 等实现暴露的命令入口：`clarify`（需求澄清）、`design`（规格设计）、`implement`（实现落地）、`execute`（任务执行）。`report`（报告）与 `transfer`（交付传输）衔接 Task 层到最终交付，属于流程链的收尾动作。
+
 ### 1.3 文档约定
 
 | 约定 | 含义 |
@@ -60,6 +62,8 @@ Context → clarify → Requirements (DRD)
 | `SHOULD` | 推荐满足的要求，在特定上下文中可以忽略 |
 | `SHOULD NOT` | 不推荐的做法，但允许有理由的例外 |
 | `MAY` | 可选的能力，实现者自行决定 |
+
+组件名称使用约定：正文首次出现时使用中文全称（可附英文，如"数据契约（Contract）"），后续可使用英文短名（如 Contract）。本仓库文件名与规范关键词使用英文（Contract / Blueprint / Catalog / Pipeline / DRD）。
 
 ---
 
@@ -109,7 +113,7 @@ Steps:
 路径解析 MUST 按以下优先级进行：
 
 1. 同名环境变量（如 `PIPELINE_DIR`）
-2. 环境变量未设置时使用 2.1 节定义的默认路径
+2. 环境变量未设置时使用 [2.1 节](#21-目录结构) 定义的默认路径
 3. 默认路径相对于当前工作目录解析
 
 ### 2.4 环境变量
@@ -135,6 +139,10 @@ Steps:
 | 数据蓝图 | Blueprint | Specification | 数据处理工作流的有序步骤定义。描述从输入到输出的转换路径。 |
 | 数据目录 | Catalog | Implementation | 运行时文件注册表。记录 Volume 的接收状态、处理进度和交付信息。 |
 | 数据管道 | Pipeline | Implementation | 可执行的数据处理流程定义。将 Blueprint 步骤映射为具体运行时配置和命令。 |
+| 任务 | Task | Task | 一次具体执行的实例。通过 `execute` 动作从 Pipeline + Catalog 生成。 |
+| 特征 | Feature | Task | 任务产出物（如生成的数据文件、报告）。 |
+| 观测 | Observation | Task | 任务执行过程中的观测记录（日志、指标）。 |
+| 数据卷 | Volume | Implementation | Catalog 中注册的一个数据文件。含路径、大小、接收时间、处理状态。 |
 
 ---
 
@@ -147,6 +155,25 @@ Steps:
 | Blueprint | [specification/blueprint.md](specification/blueprint.md) | Specification |
 | Catalog | [implementation/catalog.md](implementation/catalog.md) | Implementation |
 | Pipeline | [implementation/pipeline.md](implementation/pipeline.md) | Implementation |
+
+> Task 层（Feature / Observation）规范待定义，见 [ROADMAP.md](ROADMAP.md)。
+
+### 4.1 文档地图：规范仓库 vs 运行时目录
+
+本仓库按四层框架组织**规范文档**；规范本身定义的是各实现项目中的**运行时目录**（`.quanttide/data/`）。两者同名但不同义，对应关系如下：
+
+| 规范文档（本仓库） | 运行时目录（`.quanttide/data/`） | 内容 |
+|-------------------|--------------------------------|------|
+| `requirement/index.md` | `requirement/` | DRD 文档（Markdown） |
+| `specification/contract.md` | `specification/contract/` | 数据契约（YAML） |
+| `specification/blueprint.md` | `specification/blueprint/` | 数据蓝图（YAML） |
+| `implementation/catalog.md` | `catalog/` | 数据目录（registry.json） |
+| `implementation/pipeline.md` | `pipeline/` | 数据管道（YAML + 代码） |
+
+注意区分：
+- 本仓库的 `specification/` 目录存放**规范文档**（.md），描述 Contract 和 Blueprint 长什么样
+- 运行时目录 `specification/` 存放**规范实例**（.yaml），是具体项目中的契约和蓝图文件
+- 同理，本仓库的 `implementation/` 目录存放 Catalog/Pipeline 的规范文档，运行时没有 `implementation/` 这一层（catalog/ 与 pipeline/ 直接位于 `.quanttide/data/` 下）
 
 ---
 
