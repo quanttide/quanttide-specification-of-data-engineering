@@ -30,8 +30,6 @@ Catalog 文件 MUST 存放在 `.quanttide/data/catalog/registry.json`。可通�
 
 ## 3. 结构定义
 
-### 3.1 顶层结构
-
 | 字段 | 类型 | 约束 | 说明 |
 |------|------|------|------|
 | 键 | string | MUST 存在，MUST 唯一 | Volume 名称，即注册表条目键 |
@@ -44,10 +42,24 @@ Catalog 文件 MUST 存放在 `.quanttide/data/catalog/registry.json`。可通�
 | `name` | string | MUST 存在，MUST 与顶层键一致 | Volume 名称 |
 | `path` | string | MUST 存在，MUST 为绝对路径 | 文件绝对路径 |
 | `size` | number | MUST 存在，MUST 非负 | 文件大小（字节） |
-| `received_at` | string | MUST 存在 | 注册时间（`YYYY-MM-DD HH:MM:SS`） |
-| `status` | enum | MUST 存在 | 状态。合法值：`received` / `processing` / `processed` / `delivered` |
+| `received_at` | datetime | MUST 存在 | 注册时间。格式 MUST 遵循 Contract 的 `datetime` 类型（`YYYY-MM-DDTHH:MM:SSZ`） |
+| `status` | enum | MUST 存在 | 状态。合法值：`received` / `processing` / `processed` / `delivered`。转移规则见 4.1 节 |
 | `provider` | string | MAY 存在 | 来源 provider |
 | `source` | string | MAY 存在 | 来源 URL |
+
+### 3.3 状态机
+
+`status` 的合法转移如下（仅允许以下转移）：
+
+| 当前状态 | 可转移至 | 说明 |
+|---------|---------|------|
+| `received` | `processing` | 开始处理 |
+| `processing` | `processed` | 处理完成 |
+| `processing` | `received` | 处理失败回退（如采集/清洗失败） |
+| `processed` | `delivered` | 交付完成 |
+| `delivered` | — | 终态，MUST NOT 再转移 |
+
+未列出的转移（如 `received` → `delivered`、`processed` → `received`）MUST NOT 发生。
 
 ---
 
@@ -59,6 +71,11 @@ Catalog 文件 MUST 存放在 `.quanttide/data/catalog/registry.json`。可通�
 2. 每个 Volume 记录的 `name` MUST 与顶层键一致
 3. `status` MUST 为 `received`、`processing`、`processed`、`delivered` 之一
 4. `path` MUST 为绝对路径
+5. `received_at` MUST 遵循 3.2 节定义的时间格式
+
+### 4.1 状态机验证
+
+状态变更记录不在 Catalog 中持久化（Catalog 只保存当前状态）；转移合法性由写入方（Pipeline 实现）负责校验，规则见 [3.3 节](#33-状态机)。
 
 ---
 
@@ -70,7 +87,7 @@ Catalog 文件 MUST 存放在 `.quanttide/data/catalog/registry.json`。可通�
     "name": "<volume-name>",
     "path": "<绝对路径>",
     "size": <字节数>,
-    "received_at": "<YYYY-MM-DD HH:MM:SS>",
+    "received_at": "<YYYY-MM-DDTHH:MM:SSZ>",
     "status": "received|processing|processed|delivered",
     "provider": "<来源 provider>",
     "source": "<来源 URL>"
@@ -88,7 +105,7 @@ Catalog 文件 MUST 存放在 `.quanttide/data/catalog/registry.json`。可通�
     "name": "cust-001-raw",
     "path": "/tmp/qtcloud-data/cust-001/raw.csv",
     "size": 2340000,
-    "received_at": "2026-07-10 12:00:00",
+    "received_at": "2026-07-10T12:00:00Z",
     "status": "received",
     "provider": "dropbox",
     "source": "https://www.dropbox.com/s/xxx/file.csv"

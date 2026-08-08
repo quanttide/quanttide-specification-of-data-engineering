@@ -55,15 +55,39 @@ Context → clarify → Requirements (DRD)
 
 ### 1.3 文档约定
 
+本规范使用 RFC 2119 关键词的大写形式，语义遵循 [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt)：
+
 | 约定 | 含义 |
 |------|------|
-| `MUST` | 符合规范的实现必须满足的要求 |
-| `MUST NOT` | 符合规范的实现绝对不能做的事 |
-| `SHOULD` | 推荐满足的要求，在特定上下文中可以忽略 |
+| `MUST` / `REQUIRED` | 符合规范的实现必须满足的要求 |
+| `MUST NOT` / `SHALL NOT` | 符合规范的实现绝对不能做的事 |
+| `SHOULD` / `RECOMMENDED` | 推荐满足的要求，在特定上下文中可以忽略，但忽略前 SHOULD 理解其影响 |
 | `SHOULD NOT` | 不推荐的做法，但允许有理由的例外 |
-| `MAY` | 可选的能力，实现者自行决定 |
+| `MAY` / `OPTIONAL` | 可选的能力，实现者自行决定 |
 
 组件名称使用约定：正文首次出现时使用中文全称（可附英文，如"数据契约（Contract）"），后续可使用英文短名（如 Contract）。本仓库文件名与规范关键词使用英文（Contract / Blueprint / Catalog / Pipeline / DRD）。
+
+### 1.4 项目与根目录
+
+本规范中的**项目**（Project）指一个独立的数据工程交付单元。项目边界由项目根目录定义：
+
+- 项目根目录 MUST 包含 `.quanttide/` 目录
+- 运行时目录树 MUST 位于项目根目录的 `.quanttide/data/` 下（见 [2.1 节](#21-目录结构)）
+- 项目根目录解析顺序：
+  1. 环境变量 `PROJECT_DIR`（若设置）
+  2. 从当前工作目录向上查找最近的包含 `.quanttide/` 的祖先目录
+  3. 未找到时，当前工作目录视为项目根目录
+
+所有"项目内唯一"、"引用已存在的组件"等约束，均以项目根目录为边界解析。
+
+### 1.5 名称与引用解析
+
+- 同类组件（Contract / Blueprint / Pipeline）的 `name` MUST 在项目内唯一
+- 引用字段（`blueprint.contract`、`pipeline.blueprint`）按以下顺序解析：
+  1. 目标组件文件中的 `name` 字段
+  2. 目标组件文件名（不含扩展名）
+- 解析范围：项目内对应组件的全部文件（如 Contract 引用扫描 `.quanttide/data/specification/contract/` 下所有文件）
+- 引用无法解析 MUST 视为规范违规
 
 ---
 
@@ -185,7 +209,9 @@ Steps:
 
 - **MAJOR**（主版本号）：不兼容的规范变更（如移除层次、重命名核心概念）
 - **MINOR**（次版本号）：向后兼容的新增（如新增可选字段、新增组件）
-- **PATCH**（修订号）：向后兼容的修正（如措辞澄清、示例修正）
+- **PATCH**（修订号）：向后兼容的修正。仅限不改变语义的修改（如措辞澄清、示例修正）；若措辞修改改变了约束语义，按 MINOR 或 MAJOR 处理
+
+本规范当前处于 **0.x 阶段**：MINOR 版本（如 0.1.0）可以包含不兼容变更，但 MUST 在 CHANGELOG 中提供迁移说明。进入 1.x 后按上述 MAJOR/MINOR/PATCH 规则执行。
 
 ### 5.2 迁移策略
 

@@ -45,7 +45,15 @@ Blueprint 文件 MUST 存放在 `.quanttide/data/specification/blueprint/` 目�
 |------|------|------|------|
 | `name` | string | MUST 存在 | 步骤名称。面向业务的简短描述（如"数据格式校验"） |
 | `description` | string | SHOULD 存在 | 该步骤的业务逻辑说明。描述做了什么、规则是什么、不合规数据如何处理 |
-| `expectation` | string | SHOULD 存在 | 该步骤完成后的预期产出。如"通过校验的干净数据集" |
+| `expectation` | string | SHOULD 存在 | 该步骤完成后的预期产出。是描述性的验收预期（供人工或工具复核），不构成自动断言 |
+| `from` | string | MAY 存在 | 该步骤的输入数据（数据流语义） |
+| `to` | string | MAY 存在 | 该步骤的输出数据（数据流语义） |
+| `depends` | list<string> | MAY 存在 | 前置步骤名称列表。执行时 MUST 先于依赖步骤完成 |
+
+### 3.3 步骤执行语义
+
+- steps 按列表顺序串行执行；存在 `depends` 时，被依赖步骤 MUST 在依赖步骤之前执行（若与列表顺序冲突，以 `depends` 为准）
+- `from` / `to` 描述步骤间的数据流；步骤的输出（`to`）可以作为后续步骤的输入（`from`）
 
 ---
 
@@ -54,10 +62,10 @@ Blueprint 文件 MUST 存放在 `.quanttide/data/specification/blueprint/` 目�
 符合本规范的 Blueprint MUST 满足以下规则：
 
 1. `name` 字段 MUST 非空且唯一
-2. `contract` 字段 MUST 引用一个已存在的 Contract 名称
+2. `contract` 字段 MUST 引用一个已存在的 Contract 名称（解析规则见 [index.md](../index.md#15-名称与引用解析)）
 3. `steps` MUST 为非空列表
 4. 每个 step 的 `name` MUST 非空
-5. 步骤顺序 MUST 保持文件中定义的顺序（从上到下执行）
+5. `depends` 中引用的步骤名 MUST 存在于本 Blueprint 的 `steps` 中，且不得自引用
 
 ---
 
@@ -72,10 +80,16 @@ steps:
   - name: <步骤1名称>
     description: <业务逻辑说明>
     expectation: <预期产出>
+    from: <输入数据>
+    to: <输出数据>
 
   - name: <步骤2名称>
     description: <业务逻辑说明>
     expectation: <预期产出>
+    from: <输入数据>
+    to: <输出数据>
+    depends:
+      - <步骤1名称>
 ```
 
 完整示例见[第 6 节](#6-示例)。

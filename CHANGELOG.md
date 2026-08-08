@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## [0.0.4] - 2026-08-08
+
+### Added
+
+- `index.md`：新增"项目与根目录"（1.4 节）——项目边界、根目录解析顺序
+- `index.md`：新增"名称与引用解析"（1.5 节）——组件 name 唯一性范围、引用解析顺序、违规判定
+- `catalog.md`：新增 Volume 状态机（3.3 节）——合法转移表与终态规则
+- `blueprint.md`：Step 新增 `from` / `to` / `depends` 字段，定义步骤执行语义（3.3 节）
+- `pipeline.md`：新增 cron 字段定义（3.4 节）、engine 合法值枚举、image 格式规范
+
+### Changed
+
+- `contract.md`：类型系统闭合——`integer` 为 `number` 子集及使用规则、`datetime` 精确格式（ISO 8601 UTC 变体）、null 空语义声明、enum 元素类型约束、input/output 字段重叠规则
+- `requirement.md`：三问题与六章节映射显式化；约束改为可判定表述；"MAY 存在/MAY 省略"去重
+- `catalog.md`：`received_at` 时间格式与 Contract `datetime` 对齐（`YYYY-MM-DDTHH:MM:SSZ`）
+- `index.md`：RFC 2119 关键词表补充 REQUIRED/SHALL NOT/RECOMMENDED/OPTIONAL；0.x 阶段版本规则声明
+
+### Fixed
+
+- `blueprint.md`：删除"步骤顺序 MUST 保持文件顺序"的不可判定规则，改为有实际约束的 depends 规则
+- `pipeline.md`："合法的执行引擎标识符"改为显式枚举；"一一对应"改为可判定（数量相同且 name 一致）
+- `requirement.md`：示例补"输入要求"章节，与模板对齐
+
 ## [0.0.3] - 2026-08-08
 
 ### Changed

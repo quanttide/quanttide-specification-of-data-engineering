@@ -42,10 +42,10 @@ Pipeline 定义文件 MUST 存放在 `.quanttide/data/pipeline/` 目录下。
 | 字段 | 类型 | 约束 | 说明 |
 |------|------|------|------|
 | `name` | string | MUST 存在，MUST 唯一 | 管道名称 |
-| `blueprint` | string | MUST 存在 | 关联的 Blueprint 名称。管道是该 Blueprint 的运行时实现 |
+| `blueprint` | string | MUST 存在 | 关联的 Blueprint 名称（解析规则见 [index.md](../index.md#15-名称与引用解析)）。管道是该 Blueprint 的运行时实现 |
 | `runtime` | object | SHOULD 存在 | 运行时配置（引擎、版本） |
-| `schedule` | string | MAY 存在 | 调度方式。合法值：`manual`、`cron`、`event-driven`。默认 `manual` |
-| `steps` | list | MUST 存在，MUST NOT 为空 | 执行步骤列表。应与关联 Blueprint 的 steps 一一对应 |
+| `schedule` | string | MAY 存在 | 调度方式。合法值：`manual`、`cron`、`event-driven`。默认 `manual`。值为 `cron` 时 MUST 提供 `cron` 字段（见 3.4 节） |
+| `steps` | list | MUST 存在，MUST NOT 为空 | 执行步骤列表。MUST 与关联 Blueprint 的 steps 数量相同且 `name` 一一对应（合并或拆分 Blueprint 步骤 MUST NOT 发生） |
 
 ### 3.2 runtime 字段
 
@@ -58,10 +58,18 @@ Pipeline 定义文件 MUST 存放在 `.quanttide/data/pipeline/` 目录下。
 
 | 字段 | 类型 | 约束 | 说明 |
 |------|------|------|------|
-| `name` | string | MUST 存在 | 步骤名称。SHOULD 与对应 Blueprint step 的 name 一致 |
+| `name` | string | MUST 存在 | 步骤名称。MUST 与对应 Blueprint step 的 name 一致 |
 | `command` | string | MUST 存在 | 可执行命令或模块入口 |
-| `image` | string | MAY 存在 | 容器镜像引用（容器化部署时使用） |
-| `env` | map | MAY 存在 | 步骤级环境变量覆盖 |
+| `image` | string | MAY 存在 | 容器镜像引用（容器化部署时使用）。格式 MUST 为 `[registry/]repository[:tag]`，如 `registry.quanttide.com/data/downloader:v1.0.0` |
+| `env` | map | MAY 存在 | 步骤级环境变量覆盖。键 MUST 遵循 [index.md](../index.md#22-命名规范) 的命名规范 |
+
+### 3.4 cron 字段
+
+当 `schedule` 为 `cron` 时，MUST 提供顶层 `cron` 字段：
+
+| 字段 | 类型 | 约束 | 说明 |
+|------|------|------|------|
+| `cron` | string | MUST 存在 | 标准 cron 表达式，5 段空格分隔（分 时 日 月 周），如 `0 9 * * 1-5` |
 
 ---
 
@@ -73,8 +81,9 @@ Pipeline 定义文件 MUST 存放在 `.quanttide/data/pipeline/` 目录下。
 2. `blueprint` 字段 MUST 引用一个已存在的 Blueprint 名称
 3. `steps` MUST 为非空列表
 4. 每个 step 的 `name` 和 `command` MUST 非空
-5. `schedule` 如果指定，MUST 为 `manual`、`cron` 或 `event-driven` 之一
-6. `runtime.engine` MUST 为合法的执行引擎标识符
+5. `schedule` 如果指定，MUST 为 `manual`、`cron` 或 `event-driven` 之一；为 `cron` 时 MUST 提供合法的 `cron` 字段（5 段表达式）
+6. `runtime.engine` MUST 为以下合法值之一：`python3`、`node`、`bash`、`r`、`stata`、`matlab`
+7. steps 的 `name` 集合 MUST 与关联 Blueprint 的 steps `name` 集合相同（数量与名称一致）
 
 ---
 

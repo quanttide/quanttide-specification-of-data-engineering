@@ -17,6 +17,8 @@ Contract MUST 区分两种方向：
 | **输入契约（input）** | 客户 | "客户需要提供什么规格的数据" |
 | **输出契约（output）** | 数据工程师 | "我们将交付什么规格的数据" |
 
+input 与 output 的字段名 MAY 重叠；重叠表示同一数据项在处理前后的两种形态。除字段名重叠外，input 与 output 之间不存在强制推导关系。
+
 ---
 
 ## 2. 格式与位置
@@ -61,11 +63,13 @@ Contract 文件 MUST 存放在 `.quanttide/data/specification/contract/` 目录�
 |------|------|--------|
 | `string` | 文本 | `"user_001"` |
 | `number` | 数值（整数或浮点） | `28`, `30.37` |
-| `integer` | 整数 | `1024` |
+| `integer` | 整数。`integer` 是 `number` 的子集；值域为整数的字段 MUST 使用 `integer`，可能为小数的字段 MUST 使用 `number` | `1024` |
 | `boolean` | 布尔值 | `true` |
-| `date` | 日期（YYYY-MM-DD） | `2024-01-15` |
-| `datetime` | 日期时间（ISO 8601） | `2024-01-15T14:30:00Z` |
-| `enum` | 枚举值。MUST 附带 `values` 子字段列出合法值 | `["M", "F"]` |
+| `date` | 日期，格式 MUST 为 `YYYY-MM-DD` | `2024-01-15` |
+| `datetime` | 日期时间，格式 MUST 为 ISO 8601 的 UTC 变体 `YYYY-MM-DDTHH:MM:SSZ`（T 分隔符、Z 时区后缀，无本地时区偏移） | `2024-01-15T14:30:00Z` |
+| `enum` | 枚举值。MUST 附带 `values` 子字段列出合法值。`values` MUST 为非空 string 列表且无重复元素 | `["M", "F"]` |
+
+字段值的空语义：字段值 MAY 为 `null`，但 MUST 在 `doc`、`constraint` 或 `guarantee` 中显式声明允许；未声明时，字段值 MUST NOT 为 `null`。字段缺失（键不存在）与字段值为 `null` 是两种不同状态。
 
 ---
 
