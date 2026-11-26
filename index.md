@@ -7,7 +7,7 @@
 
 ## 1. 引言
 
-本文档是量潮数据工程标准的正式规范。它定义了数据工程项目的四个抽象层次以及每层的组件格式、字段约束和交互规则。
+本文档是量潮数据工程标准的正式规范。它定义了数据工程项目的四个抽象层次以及每层的概念、组件定义与交互规则。
 
 本文档中的关键词 "MUST"、"MUST NOT"、"SHOULD"、"SHOULD NOT"、"MAY" 遵循 [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt) 的解释。
 
@@ -72,11 +72,8 @@ Context → clarify → Requirements (DRD)
 本规范中的**项目**（Project）指一个独立的数据工程交付单元。项目边界由项目根目录定义：
 
 - 项目根目录 MUST 包含 `.quanttide/` 目录
-- 运行时目录树 MUST 位于项目根目录的 `.quanttide/data/` 下（见 [2.1 节](#21-目录结构)）
-- 项目根目录解析顺序：
-  1. 环境变量 `PROJECT_DIR`（若设置）
-  2. 从当前工作目录向上查找最近的包含 `.quanttide/` 的祖先目录
-  3. 未找到时，当前工作目录视为项目根目录
+- 运行时目录树 MUST 位于项目根目录的 `.quanttide/data/` 下
+- 项目根目录解析顺序见 handbook 仓（quanttide-handbook-of-data-engineering）`index.md` §1.3
 
 所有"项目内唯一"、"引用已存在的组件"等约束，均以项目根目录为边界解析。
 
@@ -93,63 +90,7 @@ Context → clarify → Requirements (DRD)
 
 ## 2. 配置目录
 
-本规范遵循"约定优先于配置"原则。用户无需手动设置即可使用，但所有路径 MUST 可通过环境变量覆盖。
-
-### 2.1 目录结构
-
-符合本规范的实现 MUST 使用以下目录布局：
-
-```
-.quanttide/data/
-├── requirement/         # 数据需求文档（Markdown）
-├── specification/       # 数据规格书
-│   ├── contract/        #   数据契约（YAML）
-│   └── blueprint/       #   数据蓝图（YAML）
-├── catalog/             # 数据目录（registry.json）
-└── pipeline/            # 数据管道（YAML + 可执行代码）
-```
-
-### 2.2 命名规范
-
-所有目录名和配置字段名 MUST 遵循 Unix 风格：
-
-- **单数** — 目录名用单数。示例: `contract/`（正确），`contracts/`（错误）
-- **小写** — 全小写字母。示例: `blueprint/`（正确），`BluePrint/`（错误）
-- **连字符** — 单词间用 `-` 分隔。示例: `requirement/`（正确），`requirements/`（错误）
-- **无缩写** — 除非是通用缩写。示例: `catalog/`（正确），`catlg/`（错误）
-
-YAML 文件中的字段名 MUST 遵循相同规范：
-
-```yaml
-# 正确
-name: csv-standard
-steps:
-  - command: python3
-
-# 错误
-name: csvStandard
-Steps:
-  - Command: python3
-```
-
-### 2.3 路径解析
-
-路径解析 MUST 按以下优先级进行：
-
-1. 同名环境变量（如 `PIPELINE_DIR`）
-2. 环境变量未设置时使用 [2.1 节](#21-目录结构) 定义的默认路径
-3. 默认路径相对于当前工作目录解析
-
-### 2.4 环境变量
-
-| 环境变量 | 默认值 | 说明 |
-|----------|--------|------|
-| `REQUIREMENT_DIR` | `.quanttide/data/requirement` | DRD 目录 |
-| `SPECIFICATION_DIR` | `.quanttide/data/specification` | 规格书根目录 |
-| `CONTRACT_DIR` | `.quanttide/data/specification/contract` | Contract 目录 |
-| `BLUEPRINT_DIR` | `.quanttide/data/specification/blueprint` | Blueprint 目录 |
-| `CATALOG_DIR` | `.quanttide/data/catalog` | Catalog 目录 |
-| `PIPELINE_DIR` | `.quanttide/data/pipeline` | Pipeline 目录 |
+目录结构、命名规范、路径解析与环境变量属格式规范，已分解至 handbook 仓（quanttide-handbook-of-data-engineering）`index.md` 第 1 节。
 
 ---
 
@@ -181,23 +122,7 @@ Steps:
 | Pipeline | [implementation/pipeline.md](implementation/pipeline.md) | Implementation |
 
 > Task 层（Feature / Observation）规范待定义，见 [ROADMAP.md](ROADMAP.md)。
-
-### 4.1 文档地图：规范仓库 vs 运行时目录
-
-本仓库按四层框架组织**规范文档**；规范本身定义的是各实现项目中的**运行时目录**（`.quanttide/data/`）。两者同名但不同义，对应关系如下：
-
-| 规范文档（本仓库） | 运行时目录（`.quanttide/data/`） | 内容 |
-|-------------------|--------------------------------|------|
-| `requirement/index.md` | `requirement/` | DRD 文档（Markdown） |
-| `specification/contract.md` | `specification/contract/` | 数据契约（YAML） |
-| `specification/blueprint.md` | `specification/blueprint/` | 数据蓝图（YAML） |
-| `implementation/catalog.md` | `catalog/` | 数据目录（registry.json） |
-| `implementation/pipeline.md` | `pipeline/` | 数据管道（YAML + 代码） |
-
-注意区分：
-- 本仓库的 `specification/` 目录存放**规范文档**（.md），描述 Contract 和 Blueprint 长什么样
-- 运行时目录 `specification/` 存放**规范实例**（.yaml），是具体项目中的契约和蓝图文件
-- 同理，本仓库的 `implementation/` 目录存放 Catalog/Pipeline 的规范文档，运行时没有 `implementation/` 这一层（catalog/ 与 pipeline/ 直接位于 `.quanttide/data/` 下）
+> 文档地图（规范仓库 vs 运行时目录）见 handbook 仓 `index.md` 第 2 节。
 
 ---
 

@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## [0.0.5] - 2026-11-26
+
+### Changed
+
+- 分解：非本体信息（配置目录、命名规范、路径解析、环境变量、组件字段结构、验证规则、模板、示例、文档地图）迁移至 handbook 仓（quanttide-handbook-of-data-engineering）；本仓保留四层框架、术语表、组件定义与关系、Contract 类型系统、Volume 状态机、名称与引用解析
+- `AGENTS.md`：规范边界改为"定义是什么"；命名规范与文档地图改指 handbook 仓
+- `index.md`：1.4 节项目根目录解析顺序、第 2 节配置目录、4.1 节文档地图改为指向 handbook 仓的指针
+- 各组件文档（DRD / Contract / Blueprint / Catalog / Pipeline）：保留定义、关系与语义段（类型系统、步骤执行语义、Volume 状态机），格式段改为指针
+
 ## [0.0.4] - 2026-08-08
 
 ### Added
